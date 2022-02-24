@@ -45,18 +45,18 @@ repos:
           - --remove-duplicate-keys
           - --remove-unused-variables
   - repo: https://github.com/psf/black
-    rev: 19.10b0
+    rev: 20.8b1
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v1.19.1
+    rev: v2.4.1
     hooks:
       - id: prettier
         name: prettier (with plugin-xml)
         entry: prettier --write --list-different
         additional_dependencies:
-          - "prettier@1.19.1"
-          - "@prettier/plugin-xml@0.7.2"
+          - "prettier@2.4.1"
+          - "@prettier/plugin-xml@1.1.0"
         files: \.(css|htm|html|js|json|jsx|less|md|scss|toml|ts|xml|yaml|yml)$
   - repo: https://github.com/pre-commit/mirrors-eslint
     rev: v6.8.0
@@ -112,7 +112,7 @@ repos:
           - "# generated from manifests external_dependencies"
       {%- endif %}
   - repo: https://github.com/OCA/mirrors-flake8
-    rev: v3.4.1
+    rev: v3.7.9
     hooks:
       - id: flake8
         language_version: python{% if odoo_version < 11 %}2{% else %}3{% endif %}
